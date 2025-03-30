@@ -130,7 +130,18 @@ export interface BlockConfig<T extends ToolResponse = ToolResponse> {
   inputs: Record<string, ParamConfig>
   outputs: {
     response: {
-      type: ToolOutputToValueType<ExtractToolOutput<T>>
+      type: {
+        content?: 'string'
+        metadata?: 'any' | 'json'
+        records?: 'array'
+        nextCursor?: 'string'
+        pageId?: 'string'
+        url?: 'string'
+        model?: 'string' | 'any'
+        tokens?: 'any'
+        toolCalls?: 'any'
+        [key: string]: 'string' | 'any' | 'array' | 'number' | 'json' | 'boolean' | undefined
+      }
       dependsOn?: {
         subBlockId: string
         condition: {
