@@ -18,7 +18,13 @@ import { guestyGuestTool, guestyReservationTool } from './guesty'
 import { requestTool as httpRequest } from './http/request'
 import { contactsTool as hubspotContacts } from './hubspot/contacts'
 import { readUrlTool } from './jina/reader'
-import { notionReadTool, notionWriteTool } from './notion'
+import {
+  notionDatabaseReadTool,
+  notionDatabaseUpdateTool,
+  notionDatabaseWriteTool,
+  notionReadTool,
+  notionWriteTool,
+} from './notion'
 import { dalleTool } from './openai/dalle'
 import { embeddingsTool as openAIEmbeddings } from './openai/embeddings'
 import { perplexityChatTool } from './perplexity'
@@ -68,6 +74,9 @@ export const tools: Record<string, ToolConfig> = {
   youtube_search: youtubeSearchTool,
   notion_read: notionReadTool,
   notion_write: notionWriteTool,
+  notion_database_read: notionDatabaseReadTool,
+  notion_database_write: notionDatabaseWriteTool,
+  notion_database_update: notionDatabaseUpdateTool,
   gmail_send: gmailSendTool,
   gmail_read: gmailReadTool,
   gmail_search: gmailSearchTool,

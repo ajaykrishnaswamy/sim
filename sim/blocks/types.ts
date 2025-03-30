@@ -30,6 +30,7 @@ export type SubBlockType =
   | 'schedule-config' // Schedule status and information
   | 'file-selector' // File selector for Google Drive, etc.
   | 'folder-selector' // Folder selector for Gmail, etc.
+  | 'number-input'
 
 // Component width setting
 export type SubBlockLayout = 'full' | 'half'
@@ -155,4 +156,18 @@ export interface OutputConfig {
       whenFilled: BlockOutput
     }
   }
+}
+
+export interface NotionResponse {
+  content: string
+  metadata?: {
+    title?: string
+    lastEditedTime?: string
+    createdTime?: string
+    url?: string
+  }
+  records?: any[]
+  nextCursor?: string
+  pageId?: string
+  url?: string
 }
